@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="UP1\ThesisBundle\Entity\User" table="user">
+    <id name="id" type="integer" column="user_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userLogin" type="string" column="user_login" length="50" nullable="true"/>
+    <field name="userFirstName" type="string" column="user_first_name" length="50" nullable="true"/>
+    <field name="userLastName" type="string" column="user_last_name" length="50" nullable="true"/>
+    <field name="password" type="string" column="password" length="200" nullable="true"/>
+    <many-to-many field="subscriptionEvent" target-entity="Event" inversed-by="subscriptionUser">
+      <join-table name="subscription">
+        <join-columns>
+          <join-column name="subscription_user" referenced-column-name="user_id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="subscription_event" referenced-column-name="event_id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

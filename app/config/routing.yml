@@ -1,0 +1,5 @@
+up1_thesis:
+    resource: "@UP1ThesisBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

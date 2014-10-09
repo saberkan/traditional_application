@@ -1,0 +1,19 @@
+{% extends 'UP1ThesisBundle::base.html.twig' %}
+
+{% block body -%}
+<div class="panel panel-default">
+  <div class="panel-body">
+      <a href="{{ path('event') }}">All events</a>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <a href="{{ path('my_events') }}">My events</a>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <a href="{{ path('subscriptions') }}">Subscriptions</a>
+  </div>
+</div>
+{% endblock %}

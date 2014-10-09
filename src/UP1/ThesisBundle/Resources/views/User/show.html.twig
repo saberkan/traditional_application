@@ -1,0 +1,44 @@
+{% extends 'UP1ThesisBundle::base.html.twig' %}
+
+{% block body -%}
+    <h1>User</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Userlogin</th>
+                <td>{{ entity.userLogin }}</td>
+            </tr>
+            <tr>
+                <th>Userfirstname</th>
+                <td>{{ entity.userFirstName }}</td>
+            </tr>
+            <tr>
+                <th>Userlastname</th>
+                <td>{{ entity.userLastName }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ entity.password }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('user') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('user_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
